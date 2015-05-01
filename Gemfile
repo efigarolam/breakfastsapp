@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.2.1'
 
+gem 'active_model_serializers'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'devise', '~> 3.4.0'
 gem 'ember-cli-rails'
