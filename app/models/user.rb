@@ -4,6 +4,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable,
          :trackable, :validatable, :omniauthable
 
+  has_many :comments
+  has_many :votes
+
   def self.find_for_google_oauth2(oauth, current_user = nil)
     if valid_email?(oauth['info']['email'])
       user = User.where(email: oauth['info']['email']).first
