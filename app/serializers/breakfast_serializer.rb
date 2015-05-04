@@ -1,3 +1,7 @@
 class BreakfastSerializer < ActiveModel::Serializer
-  attributes :id
+  embed :ids, include: true
+  attributes :id, :name, :description
+
+  has_many :comments
+  has_many :votes
 end
