@@ -1,0 +1,23 @@
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+body {
+  margin: 0 0 60px;
+}
+
+footer {
+  background-color: #d9230f;
+  border-color: #a91b0c;
+  bottom: 0;
+  color: #ffffff;
+  height: 60px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+footer p {
+  line-height: 50px;
+}
