@@ -1,1 +1,26 @@
+<div class="feedback-main container">
+  <div class="row">
+    <div class="col12">
+      <table class="feedback-table table table-striped table-hover">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each breakfast in controller}}
+          <tr {{ action 'goToFeedbackModal' breakfast }}>
+              <td>{{ breakfast.name }}</td>
+              <td>{{ breakfast.description }}</td>
+              <td>{{ format-date breakfast.servedAt 'LL' }}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
 {{outlet}}

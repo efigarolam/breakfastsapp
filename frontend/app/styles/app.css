@@ -25,3 +25,7 @@ footer p {
 .feedback-main {
   margin-top: 70px;
 }
+
+.feedback-table tr {
+  cursor: pointer;
+}

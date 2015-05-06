@@ -6,6 +6,8 @@ var Router = Ember.Router.extend({
 });
 
 export default Router.map(function() {
-  this.route('feedback');
+  this.route('feedback', {}, function() {
+   this.route('breakfast', { path: '/breakfast/:id' });
+  });
   this.route('vote');
 });
