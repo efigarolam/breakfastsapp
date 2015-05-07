@@ -1,3 +1,5 @@
+require 'digest/md5'
+
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -6,6 +8,7 @@ class User < ActiveRecord::Base
 
   has_many :comments
   has_many :votes
+  after_create :build_gravatar_url
 
   def self.find_for_google_oauth2(oauth, current_user = nil)
     if valid_email?(oauth['info']['email'])
@@ -26,5 +29,12 @@ class User < ActiveRecord::Base
 
   def self.valid_email?(email)
     email.end_with?('crowdint.com')
+  end
+
+  private
+
+  def build_gravatar_url
+    hash = Digest::MD5.hexdigest(self.email)
+    self.update_column(:gravatar_url, "//gravatar.com/avatar/#{hash}")
   end
 end
