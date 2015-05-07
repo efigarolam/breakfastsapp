@@ -36,14 +36,14 @@
       {{#each comment in content.comments}}
         {{#if comment.body}}
           <div class="row comment">
-            <div class="col-lg-2">
-              <img src="{{ comment.author.gravatarUrl }}" />
-            </div>
             <div class="col-lg-10">
-              <blockquote class="blockquote-reverse">
+              <blockquote>
                 <p>{{ comment.body }}</p>
                 <footer>{{ comment.author.name }}</footer>
               </blockquote>
+            </div>
+            <div class="col-lg-2">
+              <img class="img-circle pull-right" src="{{ comment.author.gravatarUrl }}" />
             </div>
           </div>
         {{/if}}
