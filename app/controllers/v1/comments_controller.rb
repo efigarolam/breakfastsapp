@@ -6,7 +6,7 @@ module V1
       if @comment.save
         render json: @comment, status: :ok
       else
-        render json: { message: 'Something went wrong.' }, status: :unprocessable_entity
+        render json: { message: 'Something went wrong.' }.to_json, status: :unprocessable_entity
       end
     end
 

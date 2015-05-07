@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :breakfasts
     resources :comments, only: :create
     resources :users, only: :show
+    resources :rates, only: [:create, :update]
   end
 
   get '*ember', to: 'dashboard#index'

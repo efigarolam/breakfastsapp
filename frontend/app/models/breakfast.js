@@ -6,5 +6,6 @@ export default DS.Model.extend({
   servedAt: DS.attr('date'),
   picture: DS.attr('string'),
   comments: DS.hasMany('comment'),
-  votes: DS.hasMany('vote')
+  votes: DS.hasMany('vote'),
+  rates: DS.hasMany('rates')
 });
