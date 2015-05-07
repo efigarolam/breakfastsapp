@@ -52,6 +52,11 @@ footer p {
   width: 100%;
 }
 
+.comments {
+  max-height: 75vh;
+  overflow-y: auto;
+}
+
 .comment {
   background-color: #f4f4f4;
   border-radius: 6px;

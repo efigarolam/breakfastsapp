@@ -7,10 +7,7 @@ export default Ember.Route.extend({
 
   setupController: function(controller, model) {
     var rates = model.get('rates');
-    var currentUser = controller.get('session.currentUser');
-    var comment = this.store.createRecord('comment', {
-      author: currentUser
-    });
+    var currentUser = this.currentUser();
 
     var rate;
     var currentUserRate = rates.filter(function(rate) {
@@ -23,17 +20,31 @@ export default Ember.Route.extend({
     });
 
     controller.set('model', model);
-    controller.set('newComment', comment);
     controller.set('rate', rate);
+    this.createNewComment();
   },
 
   actions: {
     createComment: function(comment) {
-      comment.save();
+      comment.save().then(function() {
+        this.createNewComment();
+      }.bind(this));
     },
 
     setRate: function(rate) {
       rate.save();
     }
+  },
+
+  currentUser: function() {
+    return this.controllerFor('feedback/breakfast').get('session.currentUser');
+  },
+
+  createNewComment: function() {
+    var comment = this.store.createRecord('comment', {
+      author: this.currentUser()
+    });
+
+    this.controllerFor('feedback/breakfast').set('newComment', comment);
   }
 });
