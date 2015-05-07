@@ -4,4 +4,5 @@ class BreakfastSerializer < ActiveModel::Serializer
 
   has_many :comments
   has_many :votes
+  has_many :rates
 end
