@@ -3,11 +3,17 @@ Rails.application.routes.draw do
   root to: 'dashboard#index'
 
   namespace :v1, defaults: { format: :json } do
-    resources :breakfasts
+    resources :breakfasts, only: [:index, :show]
     resources :comments, only: :create
     resources :users, only: :show
     resources :rates, only: [:create, :update]
+
+    namespace :admin do
+      resources :breakfasts
+    end
   end
+
+  get 'admin', to: 'admin#index'
 
   get '*ember', to: 'dashboard#index'
 end
