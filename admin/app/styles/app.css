@@ -1,0 +1,49 @@
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+body {
+  margin: 0 0 60px;
+}
+
+#footer {
+  background-color: #9b479f;
+  border-color: #79377c;
+  bottom: 0;
+  color: #ffffff;
+  height: 60px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+footer p {
+  line-height: 50px;
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+
+.breakfast {
+  background-color: #d9831f;
+  border-bottom: 1px solid #ac6819;
+  cursor: pointer;
+  color: #fff;
+  min-height: 100px;
+  padding: 10px;
+}
+
+.breakfast h4 {
+  color: #fff;
+}
+
+.breakfast:hover {
+  background-image: linear-gradient(#e08b27, #d9831f 6%, #cc7b1d);
+  border: 1px solid #ac6819;
+}
+
+.breakfasts-actions {
+  margin-top: 20px;
+}

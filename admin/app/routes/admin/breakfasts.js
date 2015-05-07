@@ -6,8 +6,8 @@ export default Ember.Route.extend({
   },
 
   actions: {
-    goToFeedbackModal: function(breakfast) {
-      return this.transitionTo('feedback.breakfast', breakfast.get('id'));
+    seeBreakfast: function(breakfast) {
+      this.transitionTo('admin.breakfasts.show', breakfast.get('id'));
     }
   }
 });
