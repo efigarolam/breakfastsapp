@@ -15,5 +15,6 @@ Rails.application.routes.draw do
 
   get 'admin', to: 'admin#index'
 
+  get 'admin/*ember', to: 'admin#index'
   get '*ember', to: 'dashboard#index'
 end
