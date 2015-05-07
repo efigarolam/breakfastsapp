@@ -7,7 +7,7 @@ body {
   margin: 0 0 60px;
 }
 
-footer {
+#footer {
   background-color: #d9230f;
   border-color: #a91b0c;
   bottom: 0;
@@ -22,10 +22,36 @@ footer p {
   line-height: 50px;
 }
 
-.feedback-main {
-  margin-top: 70px;
+.navbar {
+  margin-bottom: 0;
 }
 
-.feedback-table tr {
+.breakfast {
+  background-color: #029acf;
+  border-bottom: 1px solid #02749c;
   cursor: pointer;
+  color: #fff;
+  min-height: 100px;
+  padding: 10px;
+}
+
+.breakfast h4 {
+  color: #fff;
+}
+
+.breakfast:hover {
+  background-image: linear-gradient(#02a5de, #029acf 6%, #028fc0);
+  border: 1px solid #02749c;
+}
+
+.feedback-breakfast-main {
+  padding: 10px 30px 10px 30px;
+}
+
+.breakfast-pic {
+  width: 100%;
+}
+
+.comment {
+  margin-bottom: 5px;
 }
