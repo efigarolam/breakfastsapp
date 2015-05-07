@@ -42,6 +42,7 @@ export default Ember.Route.extend({
 
   createNewComment: function() {
     var comment = this.store.createRecord('comment', {
+      createdAt: new Date(),
       author: this.currentUser()
     });
 
