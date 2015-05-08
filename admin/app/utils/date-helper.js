@@ -1,5 +1,9 @@
 function format(date, format) {
-  return window.moment(date).format(format);
+  if(!date) {
+    return '';
+  }
+
+  return window.moment(date).utc().format(format);
 }
 
 export default {
