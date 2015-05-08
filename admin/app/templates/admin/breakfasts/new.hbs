@@ -1,0 +1,47 @@
+<div class="col-lg-8 col-lg-offset-2">
+  {{#if showFlash}}
+  <div class="alert alert-dismissible {{ if isPersisted 'alert-success' 'alert-danger' }} new-breakfast-flash">
+      <button type="button" class="close" data-dismiss="alert" {{ action 'hideFlash' }}>×</button>
+      {{#if isPersisted}}
+        <strong>Well done!</strong> A new Breakfast has been created.
+      {{else}}
+        <strong>Oops!</strong> Something went wrong.
+      {{/if}}
+    </div>
+  {{/if}}
+
+  <form class="new-breakfast-form form-horizontal" {{ action 'createNewBreakfast' model on="submit" }}>
+    <fieldset>
+      <legend>Create a new Breakfast</legend>
+      <div class="form-group">
+        <label for="breakfast-name" class="col-lg-2 control-label">Name</label>
+        <div class="col-lg-10">
+          {{ input name="breakfast-name" placeholder="Name" class="form-control" required="true" value=model.name }}
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="breakfast-description" class="col-lg-2 control-label">Description</label>
+        <div class="col-lg-10">
+          {{ input name="breakfast-description" placeholder="Description" class="form-control" value=model.description }}
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="breakfast-picture" class="col-lg-2 control-label">Picture URL</label>
+        <div class="col-lg-10">
+          {{ input name="breakfast-picture" placeholder="Picture URL" class="form-control" value=model.picture }}
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="breakfast-served-at" class="col-lg-2 control-label">Served At</label>
+        <div class="col-lg-10">
+          {{ bootstrap-datepicker name="breakfast-served-at" placeholder="Served At" class="form-control" value=model.servedAt }}
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-lg-4 col-lg-offset-8">
+          <button type="submit" class="btn btn-primary pull-right">Submit</button>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</div>

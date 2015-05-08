@@ -10,6 +10,22 @@ module V1
 
         render json: @breakfast, status: :ok
       end
+
+      def create
+        @breakfast = Breakfast.new(breakfast_params)
+
+        if @breakfast.save
+          render json: @breakfast, status: :ok
+        else
+          render json: { message: 'Something went wrong.' }.to_json, status: :unprocessable_entity
+        end
+      end
+
+      private
+
+      def breakfast_params
+        params.require(:breakfast).permit(:name, :description, :picture, :served_at)
+      end
     end
   end
 end

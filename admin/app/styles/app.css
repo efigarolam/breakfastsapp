@@ -45,5 +45,15 @@ footer p {
 }
 
 .breakfasts-actions {
-  margin-top: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.new-breakfast-form {
+  margin-top: 30px;
+}
+
+.new-breakfast-flash {
+  margin-top: 30px;
 }
