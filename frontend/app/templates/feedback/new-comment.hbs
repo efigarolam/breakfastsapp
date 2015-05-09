@@ -17,13 +17,15 @@
          <label for="new-rate">From 1 to 10, how good was it?</label>
          {{ view 'select' content=possibleRateValues value=rate.value prompt="Choose a Rate please" class="form-control" }}
        </div>
-       <div class="form-group">
-         <label for="new-comment">Let us know your thoughts.</label>
-         {{ textarea value=newComment.body name="new-comment" class="form-control" rows="10" placeholder="What do you think about the meal? (ingredients, size, flavor)" }}
-       </div>
-       <div class="form-group">
-         <input type="button" class="btn btn-success pull-right" value="Comment!" {{ action 'createComment' newComment }} />
-       </div>
+       <form {{ action 'createComment' newComment on="submit" }}>
+         <div class="form-group">
+           <label for="new-comment">Let us know your thoughts.</label>
+           {{ textarea value=newComment.body name="new-comment" class="form-control" rows="10" placeholder="What do you think about the meal? (ingredients, size, flavor)" required="true" }}
+         </div>
+         <div class="form-group">
+           <input type="submit" class="btn btn-success pull-right" value="Comment!" />
+         </div>
+       </form>
      </div>
   </div>
 </div>
