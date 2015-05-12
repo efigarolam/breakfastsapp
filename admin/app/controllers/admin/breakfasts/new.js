@@ -3,6 +3,7 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   showFlash: false,
   isPersisted: false,
+  successMesage: 'Breakfast created correctly.',
 
   actions: {
     hideFlash: function() {

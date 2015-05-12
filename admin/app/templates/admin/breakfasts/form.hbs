@@ -19,31 +19,31 @@
       {{/if}}
     </legend>
     <div class="form-group">
-      <label for="breakfast-name" class="col-lg-2 control-label">Name</label>
+      <label for="breakfast-name" class="col-lg-2 control-label {{ unless model.isNew 'hidden' }}">Name</label>
       <div class="col-lg-10">
         {{ input name="breakfast-name" placeholder="Name" class="form-control" required="true" value=model.name }}
       </div>
     </div>
     <div class="form-group">
-      <label for="breakfast-description" class="col-lg-2 control-label">Description</label>
+      <label for="breakfast-description" class="col-lg-2 control-label {{ unless model.isNew 'hidden' }}">Description</label>
       <div class="col-lg-10">
         {{ input name="breakfast-description" placeholder="Description" class="form-control" value=model.description }}
       </div>
     </div>
     <div class="form-group">
-      <label for="breakfast-picture" class="col-lg-2 control-label">Picture URL</label>
+      <label for="breakfast-picture" class="col-lg-2 control-label {{ unless model.isNew 'hidden' }}">Picture URL</label>
       <div class="col-lg-10">
         {{ input name="breakfast-picture" placeholder="Picture URL" class="form-control" value=model.picture }}
       </div>
     </div>
     <div class="form-group">
-      <label for="breakfast-served-at" class="col-lg-2 control-label">Served At</label>
+      <label for="breakfast-served-at" class="col-lg-2 control-label {{ unless model.isNew 'hidden' }}">Served At</label>
       <div class="col-lg-10">
         {{ bootstrap-datepicker name="breakfast-served-at" placeholder="Served At" class="form-control" value=model.servedAt }}
       </div>
     </div>
     <div class="form-group">
-      <div class="col-lg-4 col-lg-offset-8">
+      <div class="col-lg-4 {{ if model.isNew 'col-lg-offset-8' 'col-lg-offset-6' }}">
         <button type="submit" class="btn btn-primary pull-right">Submit</button>
       </div>
     </div>
