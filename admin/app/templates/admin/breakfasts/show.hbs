@@ -1,0 +1,47 @@
+<div class="breakfast-main">
+  <div class="row">
+    <div class="col-lg-12">
+      <h3>{{ model.name }} <small>({{ model.description}})</small></h3>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="row">
+        <div class="col-lg-12">
+          {{#if model.picture}}
+            <img class="breakfast-pic" src="{{ model.picture }}" alt="" />
+          {{else}}
+            <img class="breakfast-pic" src="https://foodimentaryguy.files.wordpress.com/2014/11/healthfitnessrevolution-com.jpg" alt="" />
+          {{/if}}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12">
+          <h5 class="text-right">Served on: {{ format-date model.servedAt 'LL' }}</h5>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="form-group">
+            {{#link-to 'admin.breakfasts.show.edit' class="btn btn-info pull-left"}}Update Breakfast{{/link-to}}
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="form-group">
+            <button class="btn btn-primary pull-right">Delete Breakfast</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12">
+          {{outlet}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

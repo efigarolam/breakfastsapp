@@ -21,6 +21,16 @@ module V1
         end
       end
 
+      def update
+        @breakfast = Breakfast.find(params[:id])
+
+        if @breakfast.update_attributes(breakfast_params)
+          render json: @breakfast, status: :ok
+        else
+          render json: { message: 'Something went wrong.' }.to_json, status: :unprocessable_entity
+        end
+      end
+
       private
 
       def breakfast_params

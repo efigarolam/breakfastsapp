@@ -3,6 +3,7 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   showFlash: false,
   isPersisted: false,
+  successMesage: 'Breakfast updated correctly.',
 
   actions: {
     hideFlash: function() {
@@ -10,7 +11,8 @@ export default Ember.Controller.extend({
     },
 
     submitForm: function() {
-      this.get('target').send('createNewBreakfast', this.get('model'));
+      this.get('target').send('updateBreakfast', this.get('model'));
     },
   }
 });
+

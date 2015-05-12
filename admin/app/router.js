@@ -9,7 +9,9 @@ export default Router.map(function() {
   this.route('admin', {}, function() {
     this.route('breakfasts', function() {
       this.route('new');
-      this.route('show', { path: '/:id' });
+      this.route('show', { path: '/:id' }, function() {
+        this.route('edit');
+      });
     });
   });
 });
