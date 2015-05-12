@@ -31,7 +31,12 @@
         </div>
         <div class="col-lg-6">
           <div class="form-group">
-            <button class="btn btn-primary pull-right">Delete Breakfast</button>
+            {{#if showDeleteConfirmation}}
+              <button class="btn pull-right" {{ action 'cancelDeletion' }}>No</button>
+              <button class="btn btn-success pull-right confirm-deletion" {{ action 'deleteBreakfast' model }}>Yes</button>
+            {{else}}
+              <button class="btn btn-primary pull-right" {{ action 'askForDeletionConfirm' }}>Delete Breakfast</button>
+            {{/if}}
           </div>
         </div>
       </div>

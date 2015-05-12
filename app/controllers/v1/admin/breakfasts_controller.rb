@@ -1,13 +1,13 @@
 module V1
   module Admin
     class BreakfastsController < ApplicationController
+      before_action :find_breakfast, except: [:index, :create]
+
       def index
         render json: Breakfast.all, status: :ok
       end
 
       def show
-        @breakfast = Breakfast.find_by(id: params[:id])
-
         render json: @breakfast, status: :ok
       end
 
@@ -22,9 +22,15 @@ module V1
       end
 
       def update
-        @breakfast = Breakfast.find(params[:id])
-
         if @breakfast.update_attributes(breakfast_params)
+          render json: @breakfast, status: :ok
+        else
+          render json: { message: 'Something went wrong.' }.to_json, status: :unprocessable_entity
+        end
+      end
+
+      def destroy
+        if @breakfast.destroy
           render json: @breakfast, status: :ok
         else
           render json: { message: 'Something went wrong.' }.to_json, status: :unprocessable_entity
@@ -35,6 +41,10 @@ module V1
 
       def breakfast_params
         params.require(:breakfast).permit(:name, :description, :picture, :served_at)
+      end
+
+      def find_breakfast
+        @breakfast = Breakfast.find(params[:id])
       end
     end
   end
