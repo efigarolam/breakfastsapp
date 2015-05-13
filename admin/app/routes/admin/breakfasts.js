@@ -7,7 +7,7 @@ export default Ember.Route.extend({
 
   actions: {
     seeBreakfast: function(breakfast) {
-      this.transitionTo('admin.breakfasts.show', breakfast.get('id'));
+      this.transitionTo('admin.breakfasts.show', breakfast);
     }
   }
 });

@@ -62,6 +62,6 @@ footer p {
   width: 100%;
 }
 
-.confirm-deletion {
+.confirm-deletion, .cancel-updt-crt {
   margin-right: 5px;
 }

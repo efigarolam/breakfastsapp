@@ -13,5 +13,9 @@ export default Ember.Controller.extend({
     submitForm: function() {
       this.get('target').send('createNewBreakfast', this.get('model'));
     },
+
+    cancel: function() {
+      this.get('target').send('cancelCreation');
+    }
   }
 });

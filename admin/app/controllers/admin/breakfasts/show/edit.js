@@ -13,6 +13,10 @@ export default Ember.Controller.extend({
     submitForm: function() {
       this.get('target').send('updateBreakfast', this.get('model'));
     },
+
+    cancel: function() {
+      this.get('target').send('cancelUpdate', this.get('model'));
+    }
   }
 });
 

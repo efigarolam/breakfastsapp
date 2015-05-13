@@ -17,6 +17,10 @@ export default Ember.Route.extend({
         this.controller.set('showFlash', true);
         this.controller.set('isPersisted', false);
       }.bind(this));
+    },
+
+    cancelCreation: function() {
+      this.transitionTo('admin.breakfasts');
     }
   }
 });
