@@ -1,6 +1,6 @@
 module V1
   module Admin
-    class BreakfastsController < ApplicationController
+    class BreakfastsController < BaseController
       before_action :find_breakfast, except: [:index, :create]
 
       def index
