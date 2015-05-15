@@ -65,3 +65,27 @@ footer p {
 .confirm-deletion, .cancel-updt-crt {
   margin-right: 5px;
 }
+
+.breakfast-main {
+  padding: 10px 30px 10px 30px;
+}
+
+.comments {
+  max-height: 75vh;
+  overflow-y: auto;
+}
+
+.comment {
+  background-color: #f4f4f4;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.comment blockquote {
+  margin-top: 10px;
+}
+
+.comment img {
+  margin-top: 7px;
+}
