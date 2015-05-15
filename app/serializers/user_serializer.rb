@@ -1,4 +1,3 @@
 class UserSerializer < ActiveModel::Serializer
-  embed :ids, include: true
   attributes :id, :name, :email, :gravatar_url
 end
