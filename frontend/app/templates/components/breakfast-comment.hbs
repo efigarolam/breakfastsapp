@@ -1,0 +1,35 @@
+{{#if isShowingComment}}
+  {{#if isShowingActions}}
+    <div class="row comment">
+      <div class="col-lg-4">
+        <button class="btn btn-info" {{ action 'showEditForm' }}>Edit</button>
+        <button class="btn btn-primary" {{ action 'startDeletion' }}>{{ deleteButtonMessage }}</button>
+        <button class="btn btn-warning" {{ action 'showActions' }}>Cancel</button>
+      </div>
+    </div>
+  {{else}}
+    <div class="row comment" {{ action 'showActions' }}>
+      <div class="col-lg-10">
+        <blockquote>
+          {{#if isEditing}}
+             <form>
+               <div class="form-group">
+                 {{ textarea value=comment.body class="form-control" rows="10" required="true" }}
+               </div>
+               <div class="form-group">
+                 <input type="submit" class="btn btn-success pull-right" value="Update!"  {{ action 'updateComment' comment }}/>
+                 <input type="button" class="btn btn-primary pull-right cancel-update" value="Cancel" {{ action 'cancelUpdate' }}/>
+               </div>
+             </form>
+          {{else}}
+            <p>{{ comment.body }}</p>
+          {{/if}}
+          <footer>{{ comment.author.name }}</footer>
+        </blockquote>
+      </div>
+      <div class="col-lg-2">
+        <img class="img-circle pull-right" src="{{ comment.author.gravatarUrl }}" />
+      </div>
+    </div>
+  {{/if}}
+{{/if}}

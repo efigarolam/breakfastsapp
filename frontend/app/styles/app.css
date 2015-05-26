@@ -60,8 +60,13 @@ footer p {
 .comment {
   background-color: #f4f4f4;
   border-radius: 6px;
+  cursor: pointer;
   margin-bottom: 10px;
   padding: 10px;
+}
+
+.comment:hover {
+  background-color: #d4d4d4;
 }
 
 .comment blockquote {
@@ -70,4 +75,8 @@ footer p {
 
 .comment img {
   margin-top: 7px;
+}
+
+.cancel-update {
+  margin-right: 5px;
 }
